@@ -31,6 +31,10 @@
     text-transform: uppercase;
 }
 
+#home-hero > a > button:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 #home-hero p{
     text-transform: uppercase;
 }
