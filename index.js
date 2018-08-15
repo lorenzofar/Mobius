@@ -6,6 +6,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 
+let news = require("./other/newsRouter");
+app.use("/news", news);
+
 // Start server
 var port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`App listening on ${port}`));
