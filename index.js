@@ -6,7 +6,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 
+let artists = require("./other/artistsRouter");
 let news = require("./other/newsRouter");
+app.use("/artists", artists);
 app.use("/news", news);
 
 // Start server
