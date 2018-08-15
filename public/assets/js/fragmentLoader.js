@@ -3,6 +3,7 @@ const BASE_FOLDER = "/assets/fragments/";
 const fragments_rel = {
     /* Here we put fragments to be loaded for each element
     e.g. #container: fragment.html */
+    "#header": "header.html"
 }
 
 $(document).ready(() => {
