@@ -3,7 +3,9 @@ const db = require("./dbManager");
 var router = express.Router();
 
 router.get("/", (req, res) => {
-    db.query( //TODO: Fix events with no artists (side)
+    let date = req.query && req.query.date;
+    let date_qs = date && date.split('T')[0];
+    db.query(
         `SELECT 
             e.id,    
             e.name,
@@ -15,6 +17,7 @@ router.get("/", (req, res) => {
         FROM events e 
         LEFT JOIN relations r ON r.event = e.id 
         LEFT JOIN artists a ON a.id = r.artist 
+        ${date_qs == null ? "" : `WHERE DATE_TRUNC('day', e.dt) = '${date_qs}'`}
         GROUP BY 
             e.id,    
             e.name,
@@ -51,11 +54,11 @@ router.get("/:id", (req, res) => {
             e.location, 
             e.kind,
             e.pic`,
-            (err, result) => {
-                if(err) res.status(500).json(null);
-                else if(!result.rowCount) res.status(404).json(null);
-                else res.status(200).json(result.rows[0]);
-            }
+        (err, result) => {
+            if (err) res.status(500).json(null);
+            else if (!result.rowCount) res.status(404).json(null);
+            else res.status(200).json(result.rows[0]);
+        }
     )
 })
 
