@@ -7,9 +7,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 
 let artists = require("./other/artistsRouter");
+let dates = require("./other/datesRouter");
 let events = require("./other/eventsRouter");
 let news = require("./other/newsRouter");
 app.use("/artists", artists);
+app.use("/dates", dates);
 app.use("/events", events);
 app.use("/news", news);
 
