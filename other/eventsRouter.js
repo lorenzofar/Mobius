@@ -36,7 +36,7 @@ router.get("/", (req, res) => {
             e.location, 
             e.type`,
         (err, result) => {
-            if (err) res.status(500).json(null);
+            if (err) res.status(500).json([]);
             else res.status(200).json(result.rows);
         }
     );
@@ -65,8 +65,8 @@ router.get("/:id", (req, res) => {
             e.type,
             e.pic`,
         (err, result) => {
-            if (err) res.status(500).json(null);
-            else if (!result.rowCount) res.status(404).json(null);
+            if (err) res.status(500).json([]);
+            else if (!result.rowCount) res.status(404).json([]);
             else res.status(200).json(result.rows[0]);
         }
     )
