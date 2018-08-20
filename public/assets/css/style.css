@@ -2,6 +2,14 @@ body{
     height: 100vh;
 }
 
+a {
+    color: unset;
+}
+a:hover{
+    color: unset;
+    text-decoration: unset;
+}
+
 /* BOOTSTRAP OVERRIDE */
 
 .navbar-light .navbar-toggler{
@@ -13,6 +21,8 @@ body{
     color: black;
 }
 
+
+/* Lists */
 .centered-container{
     max-width: 50%;
     margin: 0 auto;
@@ -26,4 +36,9 @@ body{
     .centered-container{
         max-width: unset;
     }
+}
+
+/* Nice effects */
+.mdl-card:hover{
+    background: rgba(0,0,0,0.05);
 }
