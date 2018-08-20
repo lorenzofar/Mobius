@@ -12,3 +12,18 @@ body{
     margin: 0 8px;
     color: black;
 }
+
+.centered-container{
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.centered-container .mdl-cell {
+    width: 100%;
+}
+
+@media(max-width: 880px){
+    .centered-container{
+        max-width: unset;
+    }
+}

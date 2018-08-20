@@ -1,0 +1,59 @@
+.event-card{
+    display: grid;
+    grid-template-areas:    "event-type event-title"
+                            "event-type event-artists"
+                            "event-type event-datetime"
+                            "event-type event-location";
+    grid-template-columns: 12px 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-column-gap: 12px;
+    height: 100%;
+    width: 100%;
+    min-height: unset;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.event-card .mdl-chip{
+    height: 20px;
+    line-height: 20px;
+}
+
+.event-card .mdl-chip__text{
+  font-size: 11px;
+}
+
+.event-card p{
+    margin: 0px;
+}
+
+.event-type{
+    grid-area: event-type;
+    background: #A8E6CE;
+    height: 100%;
+    border-radius: 16px;
+}
+
+.event-title{
+    grid-area: event-title;
+    font-weight: bold;
+    font-size: 18pt;
+    text-transform: capitalize;
+    margin: 8px 0;
+}
+
+.event-artists{
+    grid-area: event-artists;
+    margin-bottom: 6px;
+}
+
+.event-datetime{
+    grid-area: event-datetime;
+    font-size: 10pt;
+}
+
+.event-location{
+    grid-area: event-location;
+    font-size: 10pt;
+}
