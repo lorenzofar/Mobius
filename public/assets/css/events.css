@@ -30,7 +30,6 @@
 
 .event-type{
     grid-area: event-type;
-    background: #A8E6CE;
     height: 100%;
     border-radius: 16px;
 }
@@ -56,4 +55,26 @@
 .event-location{
     grid-area: event-location;
     font-size: 10pt;
+}
+
+#events-header{
+    display: grid;
+    grid-template-areas: "header options";
+    grid-template-columns: 1fr auto;
+    padding: 0 16px;
+    margin-top: 12px;
+}
+#events-header > p{
+    grid-area: header;
+    font-size: 28pt;
+    font-weight: bold;
+}
+#events-header-options{
+    grid-area: options;
+}
+
+@media(max-width: 880px){
+    #events-header{
+        grid-template-areas: "header" "options";
+    }
 }
