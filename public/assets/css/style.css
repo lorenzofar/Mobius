@@ -10,6 +10,20 @@ a:hover{
     text-decoration: unset;
 }
 
+/* TYPES COLORS */
+.theatre{
+    background-color: #88C0D0;
+}
+.music{
+    background-color: #D08770;
+}
+.dance{
+    background-color: #A3BE8C;
+}
+.side{
+    background-color: #B48EAD;
+}
+
 /* BOOTSTRAP OVERRIDE */
 
 .navbar-light .navbar-toggler{
