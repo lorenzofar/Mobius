@@ -6,16 +6,22 @@ var TYPE_FILTER = "";
 $.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
 $.addTemplateFormatter("EventsHrefFormatter", formatEventHref);
 
-$(document).ready(getEvents);
+$(document).ready(() => {
+  getEvents();
+  getDates();
+});
 
 function getEvents() {
   $.get(`/events?date=${DATE_FILTER}&type=${TYPE_FILTER}`)
     .done(parseData)
     .catch(handleError);
-  $.get("/dates").done(populateDatesOptions);
 }
 
+var getDates = () => $.get("/dates").done(populateDatesOptions);
+
 function parseData(data) {
+  $("#events-container").html(""); // Clear previous items
+  //TODO: Check if there are events to display, otherwise show an error message
   data.forEach(event => {
     $("#events-container").loadTemplate(EVENT_CARD_FRAGMENT, event, {
       append: true
@@ -57,4 +63,16 @@ function buildArtistChip(value, template) {
 
 function formatEventHref(value, template) {
   return `/pages/event.html?id=${value}`;
+}
+
+function handleDateChange(e) {
+  let selector = $("#events-dates")[0];
+  DATE_FILTER = selector.options[selector.selectedIndex].id;
+  getEvents();
+}
+
+function handleTypeChange(e) {
+  let selector = $("#events-types")[0];
+  TYPE_FILTER = selector.options[selector.selectedIndex].id;
+  getEvents();
 }

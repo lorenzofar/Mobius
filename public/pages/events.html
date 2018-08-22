@@ -21,8 +21,8 @@
     <div id="events-header">
       <p>Events</p>
       <div id="events-header-options">
-        <select id="events-dates" class="form-control"></select>
-        <select id="events-types" class="selectpicker form-control">
+        <select id="events-dates" class="form-control" onchange="handleDateChange()"></select>
+        <select id="events-types" class="selectpicker form-control" onchange="handleTypeChange()">
           <option id="">All types</option>
           <option id="music">Music</option>
           <option id="theatre">Theatre</option>
