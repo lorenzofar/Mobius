@@ -6,11 +6,6 @@ var TYPE_FILTER = "";
 $.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
 $.addTemplateFormatter("EventsHrefFormatter", formatEventHref);
 
-$(document).ready(() => {
-  getEvents();
-  getDates();
-});
-
 function getEvents() {
   $.get(`/events?date=${DATE_FILTER}&type=${TYPE_FILTER}`)
     .done(parseData)
