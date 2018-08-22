@@ -1,62 +1,73 @@
-body{
-    height: 100vh;
+body {
+  height: 100vh;
 }
 
 a {
-    color: unset;
+  color: unset;
 }
-a:hover{
-    color: unset;
-    text-decoration: unset;
+a:hover {
+  color: unset;
+  text-decoration: unset;
 }
 
 /* TYPES COLORS */
-.theatre{
-    background-color: #88C0D0;
+.theatre {
+  background-color: #88c0d0;
 }
-.music{
-    background-color: #D08770;
+.music {
+  background-color: #d08770;
 }
-.dance{
-    background-color: #A3BE8C;
+.dance {
+  background-color: #a3be8c;
 }
-.side{
-    background-color: #B48EAD;
+.side {
+  background-color: #b48ead;
 }
 
 /* BOOTSTRAP OVERRIDE */
 
-.navbar-light .navbar-toggler{
-    border: 0px;
+.navbar-light .navbar-toggler {
+  border: 0px;
 }
 
-.navbar .nav-item.nav-link{
-    margin: 0 8px;
-    color: black;
+.navbar .nav-item.nav-link {
+  margin: 0 8px;
+  color: black;
 }
 
-.form-control{
-    width: unset;
+.form-control {
+  width: unset;
 }
-
 
 /* Lists */
-.centered-container{
-    max-width: 50%;
-    margin: 0 auto;
+.centered-container {
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 .centered-container .mdl-cell {
-    width: 100%;
+  width: 100%;
 }
 
-@media(max-width: 880px){
-    .centered-container{
-        max-width: unset;
-    }
+@media (max-width: 880px) {
+  .centered-container {
+    max-width: unset;
+  }
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  min-height: unset;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+.clickable-card{
+    cursor: pointer;
 }
 
 /* Nice effects */
-.mdl-card:hover{
-    background: rgba(0,0,0,0.05);
+.clickable-card:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
