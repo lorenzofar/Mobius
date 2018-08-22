@@ -35,6 +35,10 @@ a:hover{
     color: black;
 }
 
+.form-control{
+    width: unset;
+}
+
 
 /* Lists */
 .centered-container{

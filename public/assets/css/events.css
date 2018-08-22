@@ -71,6 +71,13 @@
 }
 #events-header-options{
     grid-area: options;
+    display: flex;
+}
+#events-header-options > *{
+    margin-right: 12px;
+}
+#events-header--options > *:last-child{
+    margin-right: 0px;
 }
 
 @media(max-width: 880px){
