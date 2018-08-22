@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get("/", (req, res) => {
     db.query(
-        "SELECT DISTINCT DATE_TRUNC('day', dt) AS date FROM events;",
+        "SELECT DISTINCT DATE_TRUNC('day', dt) AS date FROM events ORDER BY date;",
         (err, result) => {
             if (err) res.status(500).json(null);
             else {
