@@ -35,6 +35,10 @@ a:hover {
   color: black;
 }
 
+.navbar-toggler{
+  padding: 0px;
+}
+
 .form-control {
   width: unset;
 }
