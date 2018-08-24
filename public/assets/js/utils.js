@@ -1,3 +1,11 @@
+const EVENT_TYPES = [
+  { id: "", txt: "All types" },
+  { id: "theatre", txt: "Theatre" },
+  { id: "music", txt: "Music" },
+  { id: "dance", txt: "Dance" },
+  { id: "side", txt: "Side events" }
+];
+
 function parseQueryString(search_string) {
   search_string = search_string.replace("?", "");
   let qs = {};
@@ -25,6 +33,7 @@ $.addTemplateFormatter("ArtistWebsiteFormatter", formatArtistWebsite);
 $.addTemplateFormatter("EventDateFormatter", formatEventDate);
 $.addTemplateFormatter("EventsHrefFormatter", formatEventHref);
 $.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
+$.addTemplateFormatter("EventTypeChipFormatter", formatEventTypeChip);
 
 function formatArtistHref(value, template) {
   return `/pages/artist.html?id=${value}`;
@@ -54,4 +63,9 @@ function buildArtistChip(value, template) {
       html += `<div class="mdl-chip"><div class="mdl-chip__text">${a}</div></div>`;
   });
   return html;
+}
+
+function formatEventTypeChip(value, template) {
+  let types = EVENT_TYPES.map(e => e.id);
+  return EVENT_TYPES[types.indexOf(value)].txt;
 }

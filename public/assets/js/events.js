@@ -2,14 +2,6 @@ const EVENT_CARD_FRAGMENT = "/assets/fragments/eventCard.html";
 const EVENT_INFO_FRAGMENT = "/assets/fragments/eventInfo.html";
 const ARTIST_THUMB_FRAGMENT = "/assets/fragments/artistThumb.html";
 
-const EVENT_TYPES = [
-  { id: "", txt: "All types" },
-  { id: "theatre", txt: "Theatre" },
-  { id: "music", txt: "Music" },
-  { id: "dance", txt: "Dance" },
-  { id: "side", txt: "Side events" }
-];
-
 var DATE_FILTER = "";
 var TYPE_FILTER = "";
 
