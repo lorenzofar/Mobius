@@ -39,6 +39,10 @@ a:hover {
   padding: 0px;
 }
 
+.navbar-nav a:hover{
+  text-decoration: underline;
+}
+
 .form-control {
   width: unset;
 }
