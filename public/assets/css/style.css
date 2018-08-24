@@ -253,17 +253,29 @@ a:hover {
   max-width: 100%;
 }
 
+#artist-info-events > * {
+  margin-bottom: 12px;
+}
+
 /* EVENTS */
-.event-card {
+.event-card,
+.event-thumb {
   display: grid;
+  grid-template-columns: 12px 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 12px;
+}
+.event-card {
   grid-template-areas:
     "event-type event-title"
     "event-type event-artists"
     "event-type event-datetime"
     "event-type event-location";
-  grid-template-columns: 12px 1fr;
-  grid-template-rows: auto auto auto auto;
-  grid-column-gap: 12px;
+}
+.event-thumb {
+  grid-template-areas:
+    "event-type event-title"
+    "event-type event-datetime";
 }
 
 .event-card .mdl-chip {

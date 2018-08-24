@@ -1,7 +1,6 @@
 const ARTIST_CARD_FRAGMENT = "/assets/fragments/artistCard.html";
 const ARTIST_INFO_FRAGMENT = "/assets/fragments/artistInfo.html";
-
-
+const EVENT_THUMB_FRAGMENT = "/assets/fragments/eventThumb.html";
 
 function getArtists() {
   $.get(`/artists`)
@@ -17,7 +16,6 @@ function parseData(data) {
   });
 }
 
-
 /* ARTIST DETAILS PAGE */
 function getArtistData() {
   let artist_id = parseQueryString(location.search).id;
@@ -29,7 +27,10 @@ function getArtistData() {
 
 function parseArtistData(data) {
   $(document).prop("title", data.name);
-  $("#artist-info").loadTemplate(ARTIST_INFO_FRAGMENT, data, { async: true });
+  $("#artist-info").loadTemplate(ARTIST_INFO_FRAGMENT, data, { async: false });
+  $("#artist-info-events").loadTemplate(EVENT_THUMB_FRAGMENT, data.events, {
+    append: true
+  });
 }
 
 function handleError(err) {
