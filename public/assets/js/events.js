@@ -94,6 +94,7 @@ function getEventData() {
 }
 
 function parseEventData(data) {
+  $(document).prop("title", data.name); // Set page title
   $("#event-info").loadTemplate(EVENT_INFO_FRAGMENT, data);
   $(".fab").addClass(data.type);
 }
