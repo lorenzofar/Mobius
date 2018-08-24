@@ -2,10 +2,6 @@ body {
   height: 100vh;
 }
 
-p{
-  margin-bottom: 0px;
-}
-
 a {
   color: unset;
 }
@@ -39,7 +35,7 @@ a:hover {
   color: black;
 }
 
-.navbar-toggler{
+.navbar-toggler {
   padding: 0px;
 }
 
@@ -53,7 +49,7 @@ a:hover {
   margin: 0 auto;
 }
 
-.centered-container .mdl-cell {
+.fw-list .mdl-cell {
   width: 100%;
 }
 
@@ -71,8 +67,16 @@ a:hover {
   padding: 12px;
 }
 
-.clickable-card{
-    cursor: pointer;
+.clickable-card {
+  cursor: pointer;
+}
+
+.fab {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 24px;
+  margin-right: 24px;
 }
 
 /* Nice effects */
