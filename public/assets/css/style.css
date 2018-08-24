@@ -88,7 +88,263 @@ a:hover {
   margin-right: 24px;
 }
 
+/* Single topic pages*/
+.detail{
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.detail > *{
+  margin-bottom: 24px;
+}
+
+.detail-banner div{
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.detail-title{
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.detail-subtitle{
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.detail-maintext{
+  text-align: justify;
+  font-size: 16px;
+}
+
+.detail-separator{
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.thumbnails-container{
+  padding: 0px;
+}
+
 /* Nice effects */
 .clickable-card:hover {
   background: rgba(0, 0, 0, 0.05);
+}
+
+/* HOME PAGE */
+#home{
+    display: grid;
+    grid-template-areas: "navbar" "home-container";
+    grid-template-rows: auto 1fr;
+}
+
+#home-container{
+    grid-area: home-container;
+    display: flex;
+}
+
+#home-hero{
+    margin: 0 auto;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 80%;
+    justify-content: space-between;
+}
+
+#home-hero > a{
+    margin: 0 auto;
+}
+#home-hero > a > button{
+    border-radius: 0px;
+    background-color: transparent;
+    color: black;
+    border-color: black;
+    text-transform: uppercase;
+}
+
+#home-hero > a > button:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#home-hero p{
+    text-transform: uppercase;
+}
+
+#home-hero > p:first-child{
+    font-size: 28pt;
+    margin-top: 12px;
+    margin-left: 12px;
+}
+
+#home-hero > div{
+    align-self: flex-end;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    font-weight: 100;
+    text-align: right;
+}
+
+#home-hero > div > p{
+    margin: 0px;
+}
+
+/* ARTISTS */
+#artists-container > * {
+  margin-bottom: 12px;
+}
+
+.artist-card, 
+.artist-thumb {
+  display: grid;
+  grid-template-areas: "artist-pic artist-info";
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 12px;
+}
+
+.artist-card-pic {
+  grid-area: artist-pic;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.artist-card-info {
+  grid-area: artist-info;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.artist-card-info > *:first-child {
+  margin-bottom: 8px;
+}
+
+.artist-card-name {
+  font-weight: bold;
+  font-size: 18pt;
+  line-height: 20pt;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+}
+
+#artist-info-website{
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
+#artist-info-pic{
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* EVENTS */
+.event-card {
+  display: grid;
+  grid-template-areas:
+    "event-type event-title"
+    "event-type event-artists"
+    "event-type event-datetime"
+    "event-type event-location";
+  grid-template-columns: 12px 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-column-gap: 12px;
+}
+
+.event-card .mdl-chip {
+  height: 20px;
+  line-height: 20px;
+}
+
+.event-card .mdl-chip__text {
+  font-size: 11px;
+}
+
+.event-card p {
+  margin: 0px;
+}
+
+.event-card-type {
+  grid-area: event-type;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.event-card-title {
+  grid-area: event-title;
+  font-weight: bold;
+  font-size: 18pt;
+  line-height: 20pt;
+  text-transform: capitalize;
+  margin: 8px 0;
+}
+
+.event-card-artists {
+  grid-area: event-artists;
+  margin-bottom: 6px;
+}
+.event-card-artists > *{
+  margin-right: 4px;
+}
+
+.event-card-datetime {
+  grid-area: event-datetime;
+  font-size: 10pt;
+}
+
+.event-card-location {
+  grid-area: event-location;
+  font-size: 10pt;
+}
+
+#events-header {
+  display: grid;
+  grid-template-areas: "header options";
+  grid-template-columns: 1fr auto;
+}
+#events-header > p {
+  grid-area: header;
+}
+#events-header-options {
+  grid-area: options;
+  display: flex;
+}
+#events-header-options > * {
+  margin-right: 12px;
+}
+#events-header-options > *:last-child {
+  margin-right: 0px;
+}
+
+#event-info-date{
+  font-weight: bold;
+}
+
+
+@media (max-width: 880px) {
+  #events-header {
+    grid-template-areas: "header" "options";
+  }
+
+  .artist-thumb{
+    grid-template-areas: "artist-pic" "artist-info";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .artist-thumb .artist-card-pic{
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+  .artist-thumb .artist-card-name{
+    font-size: 16pt;
+    text-align: center;
+  }
 }
