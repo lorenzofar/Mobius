@@ -23,34 +23,35 @@
   margin: 0px;
 }
 
-.event-type {
+.event-card-type {
   grid-area: event-type;
   height: 100%;
   border-radius: 16px;
 }
 
-.event-title {
+.event-card-title {
   grid-area: event-title;
   font-weight: bold;
   font-size: 18pt;
+  line-height: 20pt;
   text-transform: capitalize;
   margin: 8px 0;
 }
 
-.event-artists {
+.event-card-artists {
   grid-area: event-artists;
   margin-bottom: 6px;
 }
-.event-artists > *{
+.event-card-artists > *{
   margin-right: 4px;
 }
 
-.event-datetime {
+.event-card-datetime {
   grid-area: event-datetime;
   font-size: 10pt;
 }
 
-.event-location {
+.event-card-location {
   grid-area: event-location;
   font-size: 10pt;
 }
