@@ -13,11 +13,6 @@ const EVENT_TYPES = [
 var DATE_FILTER = "";
 var TYPE_FILTER = "";
 
-$.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
-$.addTemplateFormatter("EventsHrefFormatter", formatEventHref);
-$.addTemplateFormatter("ArtistsHrefFormatter", formatArtistHref);
-$.addTemplateFormatter("EventDateFormatter", formatEventDate);
-
 /* EVENTS PAGE */
 function getEvents() {
   $.get(`/events?date=${DATE_FILTER}&type=${TYPE_FILTER}`)
@@ -60,19 +55,6 @@ function populateTypesOptions() {
   $("#events-types")[0].innerHTML = html;
 }
 
-function buildArtistChip(value, template) {
-  let html = "";
-  value.forEach(a => {
-    if (a)
-      html += `<div class="mdl-chip"><div class="mdl-chip__text">${a}</div></div>`;
-  });
-  return html;
-}
-
-function formatEventHref(value, template) {
-  return `/pages/event.html?id=${value}`;
-}
-
 function handleDateChange(e) {
   let selector = $("#events-dates")[0];
   DATE_FILTER = selector.options[selector.selectedIndex].id;
@@ -109,27 +91,9 @@ function populateArtistsThumbs(artists) {
   });
 }
 
-function formatEventDate(value, template) {
-  let d = new Date(value);
-  return `${formatDate(d)} - ${d.getHours()}:${d.getMinutes()}`;
-}
-
-function formatArtistHref(value, template) {
-  return `/pages/artist.html?id=${value}`;
-}
 
 /* GENERIC */
 
 function handleError(err) {
   //TODO: Show error message
-}
-
-function formatDate(date) {
-  let temp = date
-    .toDateString()
-    .split(" ")
-    .slice(1, 4)
-    .reverse();
-  temp.push(temp.shift());
-  return temp.join(" ");
 }
