@@ -39,7 +39,7 @@ a:hover {
   padding: 0px;
 }
 
-.navbar-nav a:hover{
+.navbar-nav a:hover {
   text-decoration: underline;
 }
 
@@ -93,47 +93,50 @@ a:hover {
 }
 
 /* Single topic pages*/
-.detail{
+.detail {
   display: flex;
   flex-direction: column;
   padding: 12px;
 }
-.detail > *{
+.detail > * {
   margin-bottom: 24px;
 }
 
-.detail-banner div{
+.detail-banner div {
   text-align: center;
   margin-bottom: 8px;
 }
 
-.detail-title{
+.detail-title {
   font-size: 40px;
   line-height: 40px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.detail-subtitle{
+.detail-subtitle {
   font-size: 20px;
   line-height: 30px;
   text-transform: uppercase;
 }
 
-.detail-maintext{
+.detail-maintext {
   text-align: justify;
   font-size: 16px;
 }
 
-.detail-separator{
+.detail-separator {
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 12px;
 }
 
-.thumbnails-container{
+.thumbnails-container {
   padding: 0px;
+}
+.thumbnails-container .mdl-cell {
+  width: 100%;
 }
 
 /* Nice effects */
@@ -142,62 +145,62 @@ a:hover {
 }
 
 /* HOME PAGE */
-#home{
-    display: grid;
-    grid-template-areas: "navbar" "home-container";
-    grid-template-rows: auto 1fr;
+#home {
+  display: grid;
+  grid-template-areas: "navbar" "home-container";
+  grid-template-rows: auto 1fr;
 }
 
-#home-container{
-    grid-area: home-container;
-    display: flex;
+#home-container {
+  grid-area: home-container;
+  display: flex;
 }
 
-#home-hero{
-    margin: 0 auto;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    height: 80%;
-    justify-content: space-between;
+#home-hero {
+  margin: 0 auto;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 80%;
+  justify-content: space-between;
 }
 
-#home-hero > a{
-    margin: 0 auto;
+#home-hero > a {
+  margin: 0 auto;
 }
-#home-hero > a > button{
-    border-radius: 0px;
-    background-color: transparent;
-    color: black;
-    border-color: black;
-    text-transform: uppercase;
-}
-
-#home-hero > a > button:hover{
-    background-color: rgba(0, 0, 0, 0.2);
+#home-hero > a > button {
+  border-radius: 0px;
+  background-color: transparent;
+  color: black;
+  border-color: black;
+  text-transform: uppercase;
 }
 
-#home-hero p{
-    text-transform: uppercase;
+#home-hero > a > button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-#home-hero > p:first-child{
-    font-size: 28pt;
-    margin-top: 12px;
-    margin-left: 12px;
+#home-hero p {
+  text-transform: uppercase;
 }
 
-#home-hero > div{
-    align-self: flex-end;
-    margin-bottom: 12px;
-    margin-right: 12px;
-    font-weight: 100;
-    text-align: right;
+#home-hero > p:first-child {
+  font-size: 28pt;
+  margin-top: 12px;
+  margin-left: 12px;
 }
 
-#home-hero > div > p{
-    margin: 0px;
+#home-hero > div {
+  align-self: flex-end;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  font-weight: 100;
+  text-align: right;
+}
+
+#home-hero > div > p {
+  margin: 0px;
 }
 
 /* ARTISTS */
@@ -205,7 +208,7 @@ a:hover {
   margin-bottom: 12px;
 }
 
-.artist-card, 
+.artist-card,
 .artist-thumb {
   display: grid;
   grid-template-areas: "artist-pic artist-info";
@@ -239,12 +242,12 @@ a:hover {
   text-transform: capitalize;
 }
 
-#artist-info-website{
+#artist-info-website {
   text-transform: lowercase;
   text-decoration: underline;
 }
 
-#artist-info-pic{
+#artist-info-pic {
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
@@ -295,7 +298,7 @@ a:hover {
   grid-area: event-artists;
   margin-bottom: 6px;
 }
-.event-card-artists > *{
+.event-card-artists > * {
   margin-right: 4px;
 }
 
@@ -328,27 +331,26 @@ a:hover {
   margin-right: 0px;
 }
 
-#event-info-date{
+#event-info-date {
   font-weight: bold;
 }
-
 
 @media (max-width: 880px) {
   #events-header {
     grid-template-areas: "header" "options";
   }
 
-  .artist-thumb{
+  .artist-thumb {
     grid-template-areas: "artist-pic" "artist-info";
 
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
-  .artist-thumb .artist-card-pic{
+  .artist-thumb .artist-card-pic {
     margin: 0 auto;
     margin-bottom: 8px;
   }
-  .artist-thumb .artist-card-name{
+  .artist-thumb .artist-card-name {
     font-size: 16pt;
     text-align: center;
   }
