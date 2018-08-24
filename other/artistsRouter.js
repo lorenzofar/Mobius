@@ -20,7 +20,7 @@ router.get("/:id", (req, res) => {
             a.bio, 
             a.pic,
             a.website, 
-            array_agg(row_to_json(row(e.id, e.name, e.dt))) AS events
+            array_agg(row_to_json(row(e.id, e.name, e.dt, e.type))) AS events
         FROM artists a 
         LEFT JOIN relations r ON a.id = r.artist 
         LEFT JOIN events e ON e.id = r.event 
