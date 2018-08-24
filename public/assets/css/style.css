@@ -135,7 +135,7 @@ a:hover {
 .thumbnails-container {
   padding: 0px;
 }
-.thumbnails-container .mdl-cell {
+.thumbnails-container > div:only-child {
   width: 100%;
 }
 
