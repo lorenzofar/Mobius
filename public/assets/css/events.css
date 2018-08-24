@@ -41,6 +41,9 @@
   grid-area: event-artists;
   margin-bottom: 6px;
 }
+.event-artists > *{
+  margin-right: 4px;
+}
 
 .event-datetime {
   grid-area: event-datetime;
