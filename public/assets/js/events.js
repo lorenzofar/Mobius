@@ -1,5 +1,6 @@
 const EVENT_CARD_FRAGMENT = "/assets/fragments/eventCard.html";
 const EVENT_INFO_FRAGMENT = "/assets/fragments/eventInfo.html";
+const ARTIST_THUMB_FRAGMENT = "/assets/fragments/artistThumb.html";
 
 const EVENT_TYPES = [
   { id: "", txt: "All types" },
@@ -14,7 +15,7 @@ var TYPE_FILTER = "";
 
 $.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
 $.addTemplateFormatter("EventsHrefFormatter", formatEventHref);
-$.addTemplateFormatter("ArtistsThumbsFormatter", formatArtistsThumb);
+$.addTemplateFormatter("ArtistsHrefFormatter", formatArtistHref);
 $.addTemplateFormatter("EventDateFormatter", formatEventDate);
 
 /* EVENTS PAGE */
@@ -95,8 +96,17 @@ function getEventData() {
 
 function parseEventData(data) {
   $(document).prop("title", data.name); // Set page title
-  $("#event-info").loadTemplate(EVENT_INFO_FRAGMENT, data);
+  $("#event-info").loadTemplate(EVENT_INFO_FRAGMENT, data, { async: false });
   $(".fab").addClass(data.type);
+  populateArtistsThumbs(data.artists);
+}
+
+function populateArtistsThumbs(artists) {
+  artists.forEach(artist => {
+    $("#event-info-artists").loadTemplate(ARTIST_THUMB_FRAGMENT, artist, {
+      append: true
+    });
+  });
 }
 
 function formatEventDate(value, template) {
@@ -104,22 +114,8 @@ function formatEventDate(value, template) {
   return `${formatDate(d)} - ${d.getHours()}:${d.getMinutes()}`;
 }
 
-function formatArtistsThumb(value, template) {
-  let html = "";
-  value.forEach(a => {
-    if (a.f1) {
-      let artist_href = `/pages/artist.html?id=${a.f1}`;
-      html += `<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-                <a href="${artist_href}">
-                <div class="clickable-card artist-thumb mdl-shadow--2dp">
-                  <img src="${a.f3}" />
-                  <p>${a.f2}</p>
-                </div>
-                </a>
-                </div>`;
-    }
-  });
-  return html;
+function formatArtistHref(value, template) {
+  return `/pages/artist.html?id=${value}`;
 }
 
 /* GENERIC */
