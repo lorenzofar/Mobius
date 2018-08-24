@@ -53,6 +53,15 @@ a:hover {
   width: 100%;
 }
 
+.list-header {
+  padding: 0 16px;
+  margin-top: 12px;
+}
+.list-header > p {
+  font-size: 28pt;
+  font-weight: bold;
+}
+
 @media (max-width: 880px) {
   .centered-container {
     max-width: unset;
