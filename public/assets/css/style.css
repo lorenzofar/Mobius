@@ -92,6 +92,13 @@ a:hover {
   margin-right: 24px;
 }
 
+/* Cards */
+.card-title{
+  font-weight: bold;
+  font-size: 18pt;
+  line-height: 20pt;
+}
+
 /* Single topic pages*/
 .detail {
   display: flex;
@@ -241,11 +248,7 @@ a:hover {
 }
 
 .artist-card-name {
-  font-weight: bold;
-  font-size: 18pt;
-  line-height: 20pt;
   margin-bottom: 0px;
-  text-transform: capitalize;
 }
 
 #artist-info-website {
@@ -305,9 +308,6 @@ a:hover {
 
 .event-card-title {
   grid-area: event-title;
-  font-weight: bold;
-  font-size: 18pt;
-  line-height: 20pt;
   text-transform: capitalize;
   margin: 8px 0;
 }
@@ -372,4 +372,14 @@ a:hover {
     font-size: 16pt;
     text-align: center;
   }
+}
+
+/* NEWS */
+.news-card{
+  display: flex;
+  flex-direction: column;
+}
+
+.news-body{
+  margin-bottom: 8px;
 }

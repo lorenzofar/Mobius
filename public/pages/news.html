@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/material.css"/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <title>News</title>
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="centered-container fw-list">
+    <div id="news-header" class="list-header">
+      <p>News</p>
+    </div>
+    <div id="news-container" class="mdl-grid">
+    </div>
+  </div>
+
+  <script src="../assets/js/jquery.js" crossorigin="anonymous"></script>
+  <script src="../assets/js/popper.min.js" crossorigin="anonymous"></script>
+  <script src="../assets/js/bootstrap.js" crossorigin="anonymous"></script>
+  <script src="../assets/js/jquery.loadTemplate.js" crossorigin="anonymous"></script>
+  <script src="../assets/js/fragmentLoader.js"></script>
+  <script src="../assets/js/utils.js"></script>
+
+  <script>
+    const NEWS_CARD_FRAGMENT = "/assets/fragments/newsCard.html";
+
+    $(document).ready(() => {
+      $.get("/news").done(parseNews).catch(handleError);
+    })
+
+    function parseNews(data) {
+      data.forEach(n => $("#news-container").loadTemplate(NEWS_CARD_FRAGMENT, data, { append: true }));
+    }
+  </script>
+
+</body>
+
+</html>
