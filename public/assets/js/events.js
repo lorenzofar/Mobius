@@ -72,10 +72,18 @@ function parseEventData(data) {
   $(document).prop("title", data.name); // Set page title
   $("#event-info").loadTemplate(EVENT_INFO_FRAGMENT, data, { async: false });
   $(".fab").addClass(data.type);
-  populateArtistsThumbs(data.artists);
+  populateArtistsThumbs(data.type, data.artists);
 }
 
-function populateArtistsThumbs(artists) {
+function populateArtistsThumbs(type, artists) {
+  // Check if it is a side event
+  if(type === "side") {
+    $("#artists-header").hide();
+    $("#event-info-artists").hide();
+    $("#tickets-btn").hide();
+    return;
+  }
+
   artists.forEach(artist => {
     $("#event-info-artists").loadTemplate(ARTIST_THUMB_FRAGMENT, artist, {
       append: true
