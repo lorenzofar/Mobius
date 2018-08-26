@@ -32,7 +32,3 @@ function parseArtistData(data) {
     append: true
   });
 }
-
-function handleError(err) {
-  //TODO: Show error message
-}

@@ -69,3 +69,7 @@ function formatEventTypeChip(value, template) {
   let types = EVENT_TYPES.map(e => e.id);
   return EVENT_TYPES[types.indexOf(value)].txt;
 }
+
+/* ERROR HANDLER */
+function handleError(){
+}

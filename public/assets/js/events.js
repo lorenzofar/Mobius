@@ -90,10 +90,3 @@ function populateArtistsThumbs(type, artists) {
     });
   });
 }
-
-
-/* GENERIC */
-
-function handleError(err) {
-  //TODO: Show error message
-}
