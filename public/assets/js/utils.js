@@ -3,7 +3,7 @@ const EVENT_TYPES = [
   { id: "theatre", txt: "Theatre" },
   { id: "music", txt: "Music" },
   { id: "dance", txt: "Dance" },
-  { id: "side", txt: "Side events" }
+  { id: "side", txt: "Side event" }
 ];
 
 function parseQueryString(search_string) {
