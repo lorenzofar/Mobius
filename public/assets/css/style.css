@@ -388,3 +388,29 @@ a:hover {
 .news-body{
   margin-bottom: 8px;
 }
+
+/* ABOUT */
+#about-container{
+  margin-bottom: 24px;
+}
+#about-container .detail-maintext {
+  padding: 12px;
+}
+#about-container .detail-separator{
+  margin: 0px;
+}
+#about-container .col-sm{
+  display: flex;
+  align-content: center;
+  height: min-content;
+}
+#about-container img{
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+}
+#map{
+  width: 100%;
+  height: 300px;
+  margin-bottom: 12px;
+}
