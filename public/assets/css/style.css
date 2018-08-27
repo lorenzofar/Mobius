@@ -90,6 +90,7 @@ a:hover {
   bottom: 0;
   margin-bottom: 24px;
   margin-right: 24px;
+  z-index: 1;
 }
 
 /* Cards */
