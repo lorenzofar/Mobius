@@ -276,10 +276,10 @@ a:hover {
 }
 .event-card {
   grid-template-areas:
-    "event-type event-title"
-    "event-type event-artists"
-    "event-type event-datetime"
-    "event-type event-location";
+    "event-type event-title event-typechip"
+    "event-type event-artists event-artists"
+    "event-type event-datetime event-datetime"
+    "event-type event-location event-location";
 }
 .event-thumb {
   grid-template-areas:
@@ -304,6 +304,10 @@ a:hover {
   grid-area: event-type;
   height: 100%;
   border-radius: 16px;
+}
+
+.event-card-typechip{
+  grid-area: event-typechip;
 }
 
 .event-card-title {
