@@ -10,11 +10,11 @@ const credentials = {
   port: process.env.DBPORT
 }; // Create config object according to ENV variables
 
-const client = new pg.Client(credentials); // Initialize client
+const client = new pg.Client(process.env.DATABASE_URL); // Initialize client
 
 client
   .connect() // Connect to database
   .then(() => console.log("Connected")) // Handle succesfull connection
-  .catch(err => console.log("Error connecting")); // Handle connection errors
+  .catch(err => console.log("Error connecting", err)); // Handle connection errors
 
 module.exports = client;
