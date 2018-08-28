@@ -394,7 +394,8 @@ a:hover {
   margin-bottom: 24px;
 }
 #about-container .detail-maintext,
-#contacts-container .detail-maintext {
+#contacts-container .detail-maintext,
+#booking-container .detail-maintext {
   padding: 0 16px;
 }
 #about-container .detail-separator,
@@ -420,4 +421,10 @@ a:hover {
 /* CONTACTS */
 #messageInput {
   min-height: 100px;
+}
+
+/* BOOKING PAGE */
+#booking-event-info input{
+  font-weight: bold;
+  padding: 0;
 }
