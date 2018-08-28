@@ -94,7 +94,7 @@ a:hover {
 }
 
 /* Cards */
-.card-title{
+.card-title {
   font-weight: bold;
   font-size: 18pt;
   line-height: 20pt;
@@ -115,7 +115,7 @@ a:hover {
   margin-bottom: 8px;
 }
 
-.detail-banner .mdl-chip{
+.detail-banner .mdl-chip {
   margin: 0 auto;
   display: block;
   width: min-content;
@@ -307,7 +307,7 @@ a:hover {
   border-radius: 16px;
 }
 
-.event-card-typechip{
+.event-card-typechip {
   grid-area: event-typechip;
 }
 
@@ -380,37 +380,44 @@ a:hover {
 }
 
 /* NEWS */
-.news-card{
+.news-card {
   display: flex;
   flex-direction: column;
 }
 
-.news-body{
+.news-body {
   margin-bottom: 8px;
 }
 
 /* ABOUT */
-#about-container{
+#about-container {
   margin-bottom: 24px;
 }
-#about-container .detail-maintext {
-  padding: 12px;
+#about-container .detail-maintext,
+#contacts-container .detail-maintext {
+  padding: 0 16px;
 }
-#about-container .detail-separator{
+#about-container .detail-separator,
+#contacts-container .detail-separator {
   margin: 0px;
 }
-#about-container .col-sm{
+#about-container .col-sm {
   display: flex;
   align-content: center;
   height: min-content;
 }
-#about-container img{
+#about-container img {
   max-width: 150px;
   max-height: 150px;
   object-fit: contain;
 }
-#map{
+#map {
   width: 100%;
   height: 300px;
   margin-bottom: 12px;
+}
+
+/* CONTACTS */
+#messageInput {
+  min-height: 100px;
 }
