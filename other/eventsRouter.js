@@ -52,26 +52,27 @@ router.get("/:id", (req, res) => {
     e.location,
     e.type,
     e.pic`;
-  if (qs.fields)
+  let artists_agg = `, array_agg(row_to_json(row(a.id, a.name, a.pic))) AS artists `;
+  let artists_join = `LEFT JOIN relations r ON e.id = r.event LEFT JOIN artists a ON a.id = r.artist `;
+  if (qs.fields) {
     selector = qs.fields
       .split(",")
       .map(f => `e.${f}`)
       .join(",");
-  db.query(
-    `SELECT ${selector},
-        array_agg(row_to_json(row(a.id, a.name, a.pic))) AS artists 
-        FROM events e 
-        LEFT JOIN relations r ON e.id = r.event 
-        LEFT JOIN artists a ON a.id = r.artist 
-        WHERE e.id = ${id}
-        GROUP BY   
-            ${selector}`,
-    (err, result) => {
-      if (err) res.status(500).json([]);
-      else if (!result.rowCount) res.status(404).json([]);
-      else res.status(200).json(result.rows[0]);
+    if (qs.fields.indexOf("artists") == -1) {
+      artists_agg = "";
+      artists_join = "";
     }
-  );
+  }
+  let query = `SELECT ${selector} ${artists_agg}
+      FROM events e ${artists_join} 
+      WHERE e.id = ${id}
+      GROUP BY ${selector}`;
+  db.query(query, (err, result) => {
+    if (err) res.status(500).json([]);
+    else if (!result.rowCount) res.status(404).json([]);
+    else res.status(200).json(result.rows[0]);
+  });
 });
 
 module.exports = router;
