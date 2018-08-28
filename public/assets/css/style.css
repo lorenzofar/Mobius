@@ -51,6 +51,7 @@ a:hover {
 .centered-container {
   max-width: 50%;
   margin: 0 auto;
+  margin-bottom: 24px;
 }
 
 .fw-list .mdl-cell {
