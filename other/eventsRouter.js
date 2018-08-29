@@ -25,7 +25,7 @@ router.get("/", (req, res) => {
             e.type,
             array_agg(DISTINCT a.name) AS artists
         FROM events e 
-        LEFT JOIN relations r ON r.event = e.id 
+        LEFT JOIN performances r ON r.event = e.id 
         LEFT JOIN artists a ON a.id = r.artist 
         ${search_string} 
         GROUP BY 
@@ -53,7 +53,7 @@ router.get("/:id", (req, res) => {
     e.type,
     e.pic`;
   let artists_agg = `, array_agg(row_to_json(row(a.id, a.name, a.pic))) AS artists `;
-  let artists_join = `LEFT JOIN relations r ON e.id = r.event LEFT JOIN artists a ON a.id = r.artist `;
+  let artists_join = `LEFT JOIN performances r ON e.id = r.event LEFT JOIN artists a ON a.id = r.artist `;
   if (qs.fields) {
     selector = qs.fields
       .split(",")
