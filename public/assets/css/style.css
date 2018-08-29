@@ -10,6 +10,10 @@ a:hover {
   text-decoration: unset;
 }
 
+iframe{
+  border: 0;
+}
+
 /* TYPES COLORS */
 .theatre {
   background-color: #88c0d0;
@@ -390,25 +394,25 @@ a:hover {
   margin-bottom: 8px;
 }
 
-/* ABOUT */
-#about-container {
+/* info */
+#info-container {
   margin-bottom: 24px;
 }
-#about-container .detail-maintext,
+#info-container .detail-maintext,
 #contacts-container .detail-maintext,
 #booking-container .detail-maintext {
   padding: 0 16px;
 }
-#about-container .detail-separator,
+#info-container .detail-separator,
 #contacts-container .detail-separator {
   margin: 0px;
 }
-#about-container .col-sm {
+#info-container .col-sm {
   display: flex;
   align-content: center;
   height: min-content;
 }
-#about-container img {
+#info-container img {
   max-width: 150px;
   max-height: 150px;
   object-fit: contain;

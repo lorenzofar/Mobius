@@ -34,6 +34,8 @@ $.addTemplateFormatter("EventDateFormatter", formatEventDate);
 $.addTemplateFormatter("EventsHrefFormatter", formatEventHref);
 $.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
 $.addTemplateFormatter("EventTypeChipFormatter", formatEventTypeChip);
+$.addTemplateFormatter("InfoTransportFormatter", formatTransports);
+$.addTemplateFormatter("ListFormatter", formatList);
 
 function formatArtistHref(value, template) {
   return `/pages/artist.html?id=${value}`;
@@ -70,6 +72,20 @@ function formatEventTypeChip(value, template) {
   return EVENT_TYPES[types.indexOf(value)].txt;
 }
 
-/* ERROR HANDLER */
-function handleError(){
+/* INFO PAGE */
+function formatTransports(value, template) {
+  let transports = Object.keys(value);
+  return transports
+    .map(t => `<div class="detail-separator">${t}</div>${value[t]}`)
+    .join(" ");
 }
+
+function formatList(value, template) {
+  let fields = template.split(",");
+  return value
+    .map(v => `<li><strong>${v[fields[0]]}</strong> - ${v[fields[1]]}</li>`)
+    .join(" ");
+}
+
+/* ERROR HANDLER */
+function handleError() {}

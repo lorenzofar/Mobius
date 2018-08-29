@@ -1,0 +1,15 @@
+{
+  "about": "*** is a 5 days festival about contemporary and experimental theatre, dance and music, promoted by <i>La Triennale di Milano</i> and <i>Piccolo Teatro</i>.<br><br>The event was conceived in 2017, to give to the city of Milan an international perspective on the current trends in performing arts, as well as to bring many world-famous artists in the city and create opportunities for emerging artists. Besides the main plays and concerts, that still represent its core, the festival features several lectures, debates and workshops on the many issues of contemporary art, to stimulate a fruitful reflection on the future of the cultural industry and its role in the new modern society.<br><br> The theme of this first edition is INSERIRE TEMA",
+  "address": "Viale Alemagna, 6 - 20121 Milano",
+  "transport": {
+    "metro": "Lines 1 and 2, Stop Cadorna-Triennale",
+    "autobus": "Line 61 Stop Triennale"
+  },
+  "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.879227676071!2d9.171418315128497!3d45.47223674092884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c1459375a287%3A0x3f0d509b465c002b!2sLa+Triennale+di+Milano!5e0!3m2!1sit!2sit!4v1535390962395",
+  "location_desc": "All the events are held in the <i>Triennale Palazzo dell'arte</i> venue.",
+  "location_areas": [
+    { "name": "Teatro dell'arte", "description": "dance and theatre events" },
+    { "name": "Giardino", "description": "music events" },
+    { "name": "Salone d'onore", "description": "side events and lectures" }
+  ]
+}
