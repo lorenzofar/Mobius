@@ -80,4 +80,6 @@ function formatList(value, template) {
 }
 
 /* ERROR HANDLER */
-function handleError() {}
+function handleError() {
+  alert("An error occurred, please try again");
+}
