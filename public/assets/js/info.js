@@ -5,6 +5,5 @@ $(document).ready( () => {
 })
 
 function parseData(data){
-    console.log(data);
     $("#info-container").loadTemplate(INFO_PAGE_FRAGMENT, data);
 }
