@@ -56,9 +56,3 @@ function handleTypeChange(e) {
   TYPE_FILTER = selector.options[selector.selectedIndex].id;
   getEvents();
 }
-
-function handleEventClick(e) {
-  let type = e.className;
-  let dest = type === "side" ? "side" : "main";
-  location = `${dest}event.html?id=${e.id}`;
-}

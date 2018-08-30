@@ -66,6 +66,12 @@ function formatEventTypeChip(value, template) {
   return EVENT_TYPES[types.indexOf(value)].txt;
 }
 
+function handleEventClick(e) {
+  let type = e.className;
+  let dest = type === "side" ? "side" : "main";
+  location = `${dest}event.html?id=${e.id}`;
+}
+
 /* INFO PAGE */
 function formatList(value, template) {
   let fields = template.split(",");
