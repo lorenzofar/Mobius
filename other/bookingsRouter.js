@@ -18,7 +18,8 @@ router.post("/", (req, res) => {
         db.query(
           `INSERT INTO bookings VALUES (${data.event}, '${data.email}')`,
           err => {
-            if (err) res.status(500).end();
+            if (err && err.code == "23505") res.status(403).end();
+            else if (err) res.status(500).end();
             else res.status(201).end();
           }
         );

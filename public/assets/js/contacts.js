@@ -10,6 +10,10 @@ function sendInfoRequest(event) {
     message: $("#messageInput").val()
   };
   $.post("/requests", request)
-    .then(alert("Request sent!"))
+    .then(handleSuccess)
     .catch(handleError);
+}
+
+function handleSuccess() {
+  alert("Request sent!");
 }

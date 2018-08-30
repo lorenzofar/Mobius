@@ -25,6 +25,21 @@ function bookEvent(event) {
     email: $("#emailInput").val()
   };
   $.post("/bookings", booking)
-    .then(alert("Ticket booked succesfully"))
-    .catch(handleError);
+    .then(handleSuccess)
+    .catch(handleBookingError);
+}
+
+function handleSuccess() {
+  alert("Ticket booked succesfully");
+}
+
+function handleBookingError(err) {
+  switch (err.status) {
+    case 403:
+      alert("You already booked this event");
+      break;
+    default:
+      handleError();
+      break;
+  }
 }
