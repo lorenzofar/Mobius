@@ -31,17 +31,12 @@ $.addTemplateFormatter("ArtistsHrefFormatter", formatArtistHref);
 $.addTemplateFormatter("ArtistsEventCountFormatter", formatArtistsEventCount);
 $.addTemplateFormatter("ArtistWebsiteFormatter", formatArtistWebsite);
 $.addTemplateFormatter("EventDateFormatter", formatEventDate);
-$.addTemplateFormatter("EventsHrefFormatter", formatEventHref);
 $.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
 $.addTemplateFormatter("EventTypeChipFormatter", formatEventTypeChip);
 $.addTemplateFormatter("ListFormatter", formatList);
 
 function formatArtistHref(value, template) {
   return `/pages/artist.html?id=${value}`;
-}
-
-function formatEventHref(value, template) {
-  return `/pages/event.html?id=${value}`;
 }
 
 function formatArtistsEventCount(value, template) {
