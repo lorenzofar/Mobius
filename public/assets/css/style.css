@@ -401,6 +401,7 @@ iframe{
   list-style-type: none;
   padding: 0px;
   font-size: 16px;
+  margin-bottom: 0px;
 }
 .location-card .detail-separator{
   margin-bottom: 0px;
