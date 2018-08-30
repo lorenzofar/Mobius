@@ -10,8 +10,10 @@ router.get("/", (req, res) => {
       let out = result.rows.map(r => {
         r.directions = r.directions.map(d => {
           let st = d.split("~");
-          let o = {};
-          o[st[0]] = st[1];
+          let o = {
+            "transport": st[0],
+            "directions": st[1]
+          };
           return o;
         });
         return r;
