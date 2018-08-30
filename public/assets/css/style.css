@@ -385,13 +385,29 @@ iframe{
 }
 
 /* NEWS */
-.news-card {
+.news-card, 
+.location-card {
   display: flex;
   flex-direction: column;
 }
 
-.news-body {
+.news-body,
+.location-body {
   margin-bottom: 8px;
+}
+
+/* LOCATIONS */
+.location-card ul{
+  list-style-type: none;
+  padding: 0px;
+  font-size: 16px;
+}
+.location-card .detail-separator{
+  margin-bottom: 0px;
+}
+
+.location-body{
+  margin-bottom: 16px;
 }
 
 /* info */
