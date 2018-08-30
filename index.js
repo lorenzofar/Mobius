@@ -13,6 +13,7 @@ let events = require("./other/eventsRouter");
 let info = require("./other/informationRouter");
 let locations = require("./other/locationsRouter");
 let news = require("./other/newsRouter");
+let requests = require("./other/requestsRouter");
 app.use("/artists", artists);
 app.use("/bookings", bookings);
 app.use("/dates", dates);
@@ -20,6 +21,7 @@ app.use("/events", events);
 app.use("/info", info);
 app.use("/locations", locations);
 app.use("/news", news);
+app.use("/requests", requests);
 
 // Start server
 var port = process.env.PORT || 3000;
