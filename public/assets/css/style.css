@@ -10,7 +10,7 @@ a:hover {
   text-decoration: unset;
 }
 
-iframe{
+iframe {
   border: 0;
 }
 
@@ -84,6 +84,9 @@ iframe{
   border-radius: 5px;
   padding: 12px;
 }
+.card:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
 
 .clickable-card {
   cursor: pointer;
@@ -156,11 +159,6 @@ iframe{
 }
 .thumbnails-container > div:only-child {
   width: 100%;
-}
-
-/* Nice effects */
-.clickable-card:hover {
-  background: rgba(0, 0, 0, 0.05);
 }
 
 /* HOME PAGE */
@@ -385,7 +383,7 @@ iframe{
 }
 
 /* NEWS */
-.news-card, 
+.news-card,
 .location-card {
   display: flex;
   flex-direction: column;
@@ -397,17 +395,17 @@ iframe{
 }
 
 /* LOCATIONS */
-.location-card ul{
+.location-card ul {
   list-style-type: none;
   padding: 0px;
   font-size: 16px;
   margin-bottom: 0px;
 }
-.location-card .detail-separator{
+.location-card .detail-separator {
   margin-bottom: 0px;
 }
 
-.location-body{
+.location-body {
   margin-bottom: 16px;
 }
 
@@ -446,7 +444,7 @@ iframe{
 }
 
 /* BOOKING PAGE */
-#booking-event-info input{
+#booking-event-info input {
   font-weight: bold;
   padding: 0;
 }
