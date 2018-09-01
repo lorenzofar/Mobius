@@ -15,9 +15,34 @@
 
   <div id="header"></div>
 
-  <div id="artist-info" class="mdl-grid centered-container detail">
+  <div id="artist-info" class="mdl-grid centered-container detail"></div>
 
+  <script type="text/html" id="artistInfoTemplate">
+    <div id="artist-info-banner" class="detail-banner">
+      <div id="artist-info-name" class="detail-title" data-content-text="name" />
+      <a data-href="website" data-format="ArtistWebsiteFormatter" data-format-target="href" target="_blank">
+          <div id="artist-info-website" class="detail-subtitle" data-content="website" />
+      </a>
   </div>
+  <div id="artist-info-bio" class="detail-maintext" data-content-text="bio"></div>
+  <img id="artist-info-pic" data-src="pic" />
+  <div class="detail-separator">Events</div>
+  <div id="artist-info-events" class="mdl-grid thumbnails-container"></div>
+  </script>
+
+  <script type="text/html" id="eventThumbTemplate">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+      <a data-id="f1" data-class="f4" onclick="handleEventClick(this)">
+        <div class="mdl-card mdl-shadow--4dp card clickable-card event-thumb">
+          <div class="event-card-title" data-content-text="f2" />
+          <div class="event-card-datetime" data-content="f3" data-format="EventDateFormatter" />
+          <div class="mdl-chip event-thumb-typechip" data-class="f4">
+            <div class="mdl-chip__text" data-content="f4" data-format="EventTypeChipFormatter"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>

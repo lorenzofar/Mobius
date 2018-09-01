@@ -14,12 +14,39 @@
 <body>
   <div id="header"></div>
 
-  <div id="event-info" class="mdl-grid centered-container detail"></div>
+  <div id="event-info" class="centered-container detail">
+
+  </div>
 
   <a id="tickets-btn" class="fab">
     <div class="mdl-button mdl-button--raised">
       Reserve tickets </div>
   </a>
+
+  <script type="text/html" id="template">
+    <div id="event-info-banner" class="detail-banner">
+      <div id="event-info-title" class="detail-title" data-content-text="name" />
+      <div id="event-info-date" class="detail-subtitle" data-content-text="dt" data-format="EventDateFormatter"></div>
+      <div id="event-info-location" class="detail-subtitle" data-content-text="location"></div>
+      <div id="event-info-type" data-class="type" class="mdl-chip">
+        <div class="mdl-chip__text" data-content="type" data-format="EventTypeChipFormatter"></div>
+      </div>
+    </div>
+    <div id="event-info-description" class="detail-maintext" data-content-text="description"></div>
+    <div id="artists-header" class="detail-separator">Artists</div>
+    <div id="event-info-artists" class="mdl-grid thumbnails-container"></div>
+  </script>
+
+  <script type="text/html" id="artistThumbTemplate">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+      <a data-href="f1" data-format="ArtistsHrefFormatter" data-format-target="href">
+          <div class="mdl-card mdl-shadow--4dp card clickable-card artist-thumb">
+              <img class="artist-card-pic" data-src="f3" />
+              <div class="artist-card-info artist-card-name" data-content-text="f2"></div>
+          </div>
+      </a>
+    </div>
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>

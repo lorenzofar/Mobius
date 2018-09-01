@@ -1,4 +1,4 @@
-const BASE_FOLDER = "/assets/fragments/";
+const BASE_FOLDER = "/assets/";
 
 const fragments_rel = {
     /* Here we put fragments to be loaded for each element

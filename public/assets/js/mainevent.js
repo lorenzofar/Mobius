@@ -1,6 +1,3 @@
-const EVENT_INFO_FRAGMENT = "/assets/fragments/mainEventInfo.html";
-const ARTIST_THUMB_FRAGMENT = "/assets/fragments/artistThumb.html";
-
 $(document).ready(() => {
   let event_id = parseQueryString(location.search).id;
   if (!event_id) location.replace("/pages/events.html"); // If no event is specified, fall back to the events list
@@ -14,7 +11,7 @@ function parseEventData(id, data) {
   if (data.type == "side")
     location = location.toString().replace("main", "side");
   $(document).prop("title", data.name); // Set page title
-  $("#event-info").loadTemplate(EVENT_INFO_FRAGMENT, data, { async: false });
+  $("#event-info").loadTemplate($("#template"), data, { async: false });
   $(".fab").addClass(data.type);
   $("#tickets-btn").attr("href", `/pages/book.html?id=${id}`);
   populateArtistsThumbs(data.type, data.artists);
@@ -30,7 +27,7 @@ function populateArtistsThumbs(type, artists) {
   }
 
   artists.forEach(artist => {
-    $("#event-info-artists").loadTemplate(ARTIST_THUMB_FRAGMENT, artist, {
+    $("#event-info-artists").loadTemplate($("#artistThumbTemplate"), artist, {
       append: true
     });
   });

@@ -23,6 +23,19 @@
     </div>
   </div>
 
+  <script type="text/html" id="locationCardTemplate">
+    <div class="mdl-cell mdl-cell--8-col">
+      <div class="mdl-card mdl-shadow--4dp card location-card">
+          <div class="card-title" data-content-text="name" />
+          <div class="card-subtitle" data-content="address"></div>
+          <br>
+          <div class="location-body" data-content="description"></div>
+          <div class="detail-separator">PUBLIC TRANSPORT DIRECTIONS</div>
+          <ul data-content="directions" data-format="ListFormatter" data-format-options="transport,directions" />
+      </div>
+    </div>
+  </script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"

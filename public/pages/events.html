@@ -29,6 +29,23 @@
     </div>
   </div>
 
+  <script type="text/html" id="eventCardTemplate">
+    <div class="mdl-cell mdl-cell--8-col">
+      <a data-id="id" data-class="type" onclick="handleEventClick(this)">
+        <div class="mdl-card mdl-shadow--4dp card clickable-card event-card">
+          <div data-class="type" class="event-card-type" />
+          <div class="card-title event-card-title" data-content-text="name" />
+          <div class="event-card-artists" data-content="artists" data-format="ArtistChipsFormatter" />
+          <div class="event-card-datetime" data-content="dt" data-format="EventDateFormatter" />
+          <div class="event-card-location" data-content-text="location" />
+          <div class="mdl-chip event-card-typechip" data-class="type">
+            <div class="mdl-chip__text" data-content="type" data-format="EventTypeChipFormatter"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"

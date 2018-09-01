@@ -24,6 +24,19 @@
     <div id="artists-container" class="mdl-grid fw-list"></div>
   </div>
 
+  <script type="text/html" id="artistCardTemplate">
+    <div class="mdl-cell">
+      <a data-href="id" data-format="ArtistsHrefFormatter" data-format-target="href">
+        <div class="mdl-card mdl-shadow--4dp card clickable-card artist-card">
+          <img class="artist-card-pic" data-src="pic" />
+          <div class="artist-card-info">
+            <div class="card-title artist-card-name" data-content-text="name" />
+            <div class="artist-card-events" data-content="events" data-format="ArtistsEventCountFormatter" />
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>

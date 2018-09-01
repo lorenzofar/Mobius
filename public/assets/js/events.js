@@ -1,5 +1,3 @@
-const EVENT_CARD_FRAGMENT = "/assets/fragments/eventCard.html";
-
 var DATE_FILTER = "";
 var TYPE_FILTER = "";
 
@@ -19,7 +17,7 @@ function parseEvents(data) {
   $("#events-container").html(""); // Clear previous items
   //TODO: Check if there are events to display, otherwise show an error message
   data.forEach(event => {
-    $("#events-container").loadTemplate(EVENT_CARD_FRAGMENT, event, {
+    $("#events-container").loadTemplate($("#eventCardTemplate"), event, {
       append: true
     });
   });

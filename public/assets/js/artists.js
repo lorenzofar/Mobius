@@ -1,4 +1,3 @@
-const ARTIST_CARD_FRAGMENT = "/assets/fragments/artistCard.html";
 const ARTIST_INFO_FRAGMENT = "/assets/fragments/artistInfo.html";
 const EVENT_THUMB_FRAGMENT = "/assets/fragments/eventThumb.html";
 
@@ -10,7 +9,7 @@ function getArtists() {
 
 function parseData(data) {
   data.forEach(artist => {
-    $("#artists-container").loadTemplate(ARTIST_CARD_FRAGMENT, artist, {
+    $("#artists-container").loadTemplate($("#artistCardTemplate"), artist, {
       append: true
     });
   });
@@ -27,8 +26,10 @@ function getArtistData() {
 
 function parseArtistData(data) {
   $(document).prop("title", data.name);
-  $("#artist-info").loadTemplate(ARTIST_INFO_FRAGMENT, data, { async: false });
-  $("#artist-info-events").loadTemplate(EVENT_THUMB_FRAGMENT, data.events, {
+  $("#artist-info").loadTemplate($("#artistInfoTemplate"), data, {
+    async: false
+  });
+  $("#artist-info-events").loadTemplate($("#eventThumbTemplate"), data.events, {
     append: true
   });
 }

@@ -1,5 +1,3 @@
-const LOCATION_CARD_FRAGMENT = "/assets/fragments/locationCard.html";
-
 $(document).ready(() => {
   $.get("/locations")
     .done(parseLocations)
@@ -8,7 +6,7 @@ $(document).ready(() => {
 
 function parseLocations(data) {
   data.forEach(l =>
-    $("#locations-container").loadTemplate(LOCATION_CARD_FRAGMENT, l, {
+    $("#locations-container").loadTemplate($("#locationCardTemplate"), l, {
       append: true
     })
   );
