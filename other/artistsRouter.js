@@ -7,13 +7,32 @@ const sort_regex = /^(asc|desc|ASC|DESC)$/;
 router.get("/", (req, res) => {
   let q = req.query;
   let sort = "";
+  let selector = "a.id, a.name, a.pic";
+  let events_count = ", COUNT(r.event) AS events";
+  let events_joiner = " LEFT JOIN performances r ON a.id = r.artist";
 
+  if (q && q.fields) {
+    selector = q.fields
+      .split(",")
+      .filter(f => f != "events")
+      .map(f => `a.${f}`)
+      .join(",");
+    if (q.fields.indexOf("events") === -1) {
+      events_count = "";
+      events_joiner = "";
+    } else if (q.fields === "events")
+      // Remove the comma at the start of the query
+      events_count = events_count.replace(",", "");
+  }
   if (q && q.sort && sort_regex.test(q.sort)) sort = q.sort;
-
+  // If the 'name' field is not requested we cannot order the artist by alphabetical order.
+  // Hence ordering is performed only if the 'name' field is present
+  let order = selector.indexOf("a.name") == -1 ? "" : `ORDER BY a.name ${sort}`;
+  let query = `SELECT ${selector} ${events_count} FROM artists a ${events_joiner} ${selector.length === 0  ? "GROUP BY a.id" : "GROUP BY"} ${selector} ${order}`;
   db.query(
-    `SELECT a.id, a.name, a.pic, COUNT(r.event) AS events FROM artists a LEFT JOIN performances r ON a.id = r.artist GROUP BY a.id, a.name, a.pic ORDER BY a.name ${sort}`,
+    query,
     (err, result) => {
-      if (err) res.status(500).json(null);
+      if (err) res.status(500).json([]);
       else res.status(200).json(result.rows);
     }
   );
