@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get("/", (req, res) => {
   let q = req.query;
-  let fields = q.fields.split(",");
+  let fields = q.fields ? q.fields.split(",") : [];
   let columns = fields.length ? fields : ["*"];
   db.query(qh.select(columns, "locations"), (err, result) => {
     if (err) res.status(500).json([]);
