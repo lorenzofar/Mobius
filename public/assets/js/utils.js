@@ -84,3 +84,9 @@ function formatList(value, template) {
 function handleError() {
   alert("An error occurred, please try again");
 }
+
+function handleEmptyData(container){
+  console.log("Empty data");
+  console.log(container);
+  $(container)[0].innerHTML = "<div class='data-placeholder'>No data to show</div>";
+}

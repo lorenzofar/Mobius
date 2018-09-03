@@ -9,11 +9,13 @@ $(document).ready(() => {
 
 function parseLocations(data) {
   locations = data;
-  data.forEach(l =>
-    $("#locations-container").loadTemplate($("#locationCardTemplate"), l, {
-      append: true
-    })
-  );
+  if (!data.length) handleEmptyData("#locations-container");
+  else
+    data.forEach(l =>
+      $("#locations-container").loadTemplate($("#locationCardTemplate"), l, {
+        append: true
+      })
+    );
 }
 
 function pinLocations() {

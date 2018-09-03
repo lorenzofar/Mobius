@@ -47,7 +47,9 @@
     })
 
     function parseNews(data) {
-      data.forEach(n => $("#news-container").loadTemplate($("#newsCardTemplate"), data, { append: true }));
+      if (!data.length) handleEmptyData("#news-container");
+      else
+        data.forEach(n => $("#news-container").loadTemplate($("#newsCardTemplate"), data, { append: true }));
     }
   </script>
 

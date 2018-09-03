@@ -8,11 +8,13 @@ function getArtists() {
 }
 
 function parseData(data) {
-  data.forEach(artist => {
-    $("#artists-container").loadTemplate($("#artistCardTemplate"), artist, {
-      append: true
+  if (!data.length) handleEmptyData("#artists-container");
+  else
+    data.forEach(artist => {
+      $("#artists-container").loadTemplate($("#artistCardTemplate"), artist, {
+        append: true
+      });
     });
-  });
 }
 
 /* ARTIST DETAILS PAGE */

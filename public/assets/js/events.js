@@ -16,11 +16,13 @@ function getDates() {
 function parseEvents(data) {
   $("#events-container").html(""); // Clear previous items
   //TODO: Check if there are events to display, otherwise show an error message
-  data.forEach(event => {
-    $("#events-container").loadTemplate($("#eventCardTemplate"), event, {
-      append: true
+  if (!data.length) handleEmptyData("#events-container");
+  else
+    data.forEach(event => {
+      $("#events-container").loadTemplate($("#eventCardTemplate"), event, {
+        append: true
+      });
     });
-  });
 }
 
 function populateDatesOptions(data) {

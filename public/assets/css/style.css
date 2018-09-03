@@ -71,6 +71,12 @@ iframe {
   font-weight: bold;
 }
 
+.data-placeholder{
+  margin: 48px auto;
+  font-size: 16px;
+  color: #555555;
+}
+
 .card {
   height: 100%;
   width: 100%;
