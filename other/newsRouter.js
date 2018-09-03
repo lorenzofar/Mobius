@@ -1,11 +1,11 @@
-const express = require("express");
+    const express = require("express");
 const db = require("./dbManager");
 const qh = require("./queryHelper");
 var router = express.Router();
 
 router.get("/", (req, res) => {
     let q = req.query;
-    let fields = q.fields.split(",");
+    let fields = q.fields ? q.fields.split(",") : [];
     let columns = fields.length ? fields : ["*"];
     db.query(
         qh.select(columns, "news"),
