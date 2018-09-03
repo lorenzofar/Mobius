@@ -71,12 +71,6 @@ iframe {
   font-weight: bold;
 }
 
-@media (max-width: 880px) {
-  .centered-container {
-    max-width: unset;
-  }
-}
-
 .card {
   height: 100%;
   width: 100%;
@@ -370,6 +364,10 @@ iframe {
     grid-template-areas: "header" "options";
   }
 
+  .centered-container {
+    max-width: unset;
+  }
+
   .artist-thumb {
     grid-template-areas: "artist-pic" "artist-info";
 
@@ -383,6 +381,17 @@ iframe {
   .artist-thumb .artist-card-name {
     font-size: 16pt;
     text-align: center;
+  }
+
+  .event-thumb {
+    grid-template-areas:
+      "event-title"
+      "event-datetime"
+      "event-typechip";
+  }
+  .event-thumb .mdl-chip{
+    width: min-content;
+    margin-top: 8px;
   }
 }
 
