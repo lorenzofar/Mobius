@@ -389,7 +389,7 @@ iframe {
       "event-datetime"
       "event-typechip";
   }
-  .event-thumb .mdl-chip{
+  .event-thumb .mdl-chip {
     width: min-content;
     margin-top: 8px;
   }
@@ -457,6 +457,10 @@ iframe {
 }
 
 /* CONTACTS */
+#contacts-container a {
+  text-decoration: underline;
+  cursor: pointer;
+}
 #messageInput {
   min-height: 100px;
 }
