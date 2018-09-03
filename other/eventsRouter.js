@@ -15,29 +15,33 @@ router.get("/", (req, res) => {
     search_string += search.reduce((s1, s2) => `${s1} AND ${s2}`); // combine them to build a query string
   }
 
-  db.query(
-    `SELECT 
-            e.id,
-            e.name,
-            e.dt,
-            e.location,
-            e.type,
-            array_agg(DISTINCT a.name) AS artists
-        FROM events e 
-        LEFT JOIN performances r ON r.event = e.id 
-        LEFT JOIN artists a ON a.id = r.artist 
-        ${search_string} 
-        GROUP BY 
-            e.id,
-            e.name,
-            e.dt,
-            e.location,
-            e.type`,
-    (err, result) => {
-      if (err) res.status(500).json([]);
-      else res.status(200).json(result.rows);
-    }
-  );
+  let selector = "e.id, e.name, e.dt, e.location, e.type";
+  let artists_collector = ", array_agg(DISTINCT a.name) AS artists";
+  let artists_joiner =
+    "LEFT JOIN performances r ON r.event = e.id LEFT JOIN artists a ON a.id = r.artist";
+
+  let q = req.query;
+  if (q && q.fields) {
+    selector = q.fields
+      .split(",")
+      .filter(f => f != "artists")
+      .map(f => `e.${f}`)
+      .join(",");
+    if (q.fields.indexOf("artists") === -1) {
+      artists_collector = "";
+      artists_joiner = "";
+    } else if (q.fields === "artists")
+      // Remove the comma at the start of the query
+      artists_collector = artists_collector.replace(",", "");
+  }
+
+  let query = `SELECT ${selector} ${artists_collector} FROM events e ${artists_joiner} ${search_string} ${
+    selector.length === 0 ? "GROUP BY e.id" : `GROUP BY ${selector}`
+  }`;
+  db.query(query, (err, result) => {
+    if (err) res.status(500).json([]);
+    else res.status(200).json(result.rows);
+  });
 });
 
 router.get("/:id", (req, res) => {
