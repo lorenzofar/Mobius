@@ -19,7 +19,6 @@ router.get("/", (req, res) => {
     `SELECT 
             e.id,
             e.name,
-            e.description,
             e.dt,
             e.location,
             e.type,
@@ -31,7 +30,6 @@ router.get("/", (req, res) => {
         GROUP BY 
             e.id,
             e.name,
-            e.description,
             e.dt,
             e.location,
             e.type`,
