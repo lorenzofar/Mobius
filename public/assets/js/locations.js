@@ -1,8 +1,10 @@
-$(document).ready(() => {
+const MAP_CENTER = { lat: 45.465, lon: 9.186 }; // Coordinates of Milan
+
+function loadData() {
   $.get("/locations")
     .done(parseLocations)
     .catch(handleError);
-});
+}
 
 function parseLocations(data) {
   data.forEach(l =>
@@ -10,4 +12,23 @@ function parseLocations(data) {
       append: true
     })
   );
+  pinLocations(data);
+}
+
+function pinLocations(data) {
+  let map = new Microsoft.Maps.Map(document.getElementById("map"), {
+    showMapTypeSelector: false,
+    center: new Microsoft.Maps.Location(MAP_CENTER.lat, MAP_CENTER.lon)
+  });
+  map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.grayscale });
+  data.forEach(l => {
+    if (l && l.lat && l.lon) {
+      var latLon = new Microsoft.Maps.Location(l.lat, l.lon);
+      var pushpin = new Microsoft.Maps.Pushpin(latLon, {
+        title: l.name,
+        color: "#FF3B30"
+      });
+      map.entities.push(pushpin);
+    }
+  });
 }

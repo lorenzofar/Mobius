@@ -2,29 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <title>How to reach</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AgLX7ZWSojIuSybc9FPSCTsvHDinhwjmXlhdrvg8lFcnZ8STKk3ELRdck6jhQBZO&callback=loadData'></script>
+    <title>How to reach</title>
 </head>
 
 <body>
 
-  <div id="header"></div>
+    <div id="header"></div>
 
-  <div class="centered-container fw-list">
-    <div id="news-header" class="list-header">
-      <p>How to reach</p>
-    </div>
-    <div id="locations-container" class="mdl-grid">
-    </div>
-  </div>
+    <div class="centered-container fw-list">
+        <div id="news-header" class="list-header">
+            <p>How to reach</p>
+        </div>
+        <div id="locations-container" class="mdl-grid">
+        </div>
 
-  <script type="text/html" id="locationCardTemplate">
-    <div class="mdl-cell mdl-cell--8-col">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script type="text/html" id="locationCardTemplate">
+            <div class="mdl-cell mdl-cell--8-col">
       <div class="mdl-card mdl-shadow--4dp card location-card">
           <div class="card-title" data-content-text="name" />
           <div class="card-subtitle" data-content="address"></div>
@@ -34,16 +39,16 @@
           <ul data-content="directions" data-format="ListFormatter" data-format-options="transport,directions" />
       </div>
     </div>
-  </script>
+        </script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <script src="../assets/js/jquery.loadTemplate.js" crossorigin="anonymous"></script>
-  <script src="../assets/js/fragmentLoader.js"></script>
-  <script src="../assets/js/utils.js"></script>
-  <script src="../assets/js/locations.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="../assets/js/jquery.loadTemplate.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/fragmentLoader.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/locations.js"></script>
 
 </body>
 
