@@ -27,13 +27,15 @@ function formatDate(date) {
 }
 
 /* FORMATTERS */
-$.addTemplateFormatter("ArtistsHrefFormatter", formatArtistHref);
-$.addTemplateFormatter("ArtistsEventCountFormatter", formatArtistsEventCount);
-$.addTemplateFormatter("ArtistWebsiteFormatter", formatArtistWebsite);
-$.addTemplateFormatter("EventDateFormatter", formatEventDate);
-$.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
-$.addTemplateFormatter("EventTypeChipFormatter", formatEventTypeChip);
-$.addTemplateFormatter("ListFormatter", formatList);
+if ($.addTemplateFormatter) {
+  $.addTemplateFormatter("ArtistsHrefFormatter", formatArtistHref);
+  $.addTemplateFormatter("ArtistsEventCountFormatter", formatArtistsEventCount);
+  $.addTemplateFormatter("ArtistWebsiteFormatter", formatArtistWebsite);
+  $.addTemplateFormatter("EventDateFormatter", formatEventDate);
+  $.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
+  $.addTemplateFormatter("EventTypeChipFormatter", formatEventTypeChip);
+  $.addTemplateFormatter("ListFormatter", formatList);
+}
 
 function formatArtistHref(value, template) {
   return `/pages/artist.html?id=${value}`;
@@ -85,8 +87,9 @@ function handleError() {
   alert("An error occurred, please try again");
 }
 
-function handleEmptyData(container){
+function handleEmptyData(container) {
   console.log("Empty data");
   console.log(container);
-  $(container)[0].innerHTML = "<div class='data-placeholder'>No data to show</div>";
+  $(container)[0].innerHTML =
+    "<div class='data-placeholder'>No data to show</div>";
 }
