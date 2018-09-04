@@ -52,8 +52,7 @@ router.get("/:id", (req, res) => {
     e.description,
     e.dt,
     e.location,
-    e.type,
-    e.pic`;
+    e.type`;
   let artists_agg = `, array_agg(row_to_json(row(a.id, a.name, a.pic))) AS artists `;
   let artists_join = `LEFT JOIN performances r ON e.id = r.event LEFT JOIN artists a ON a.id = r.artist `;
   if (q && q.fields) {
