@@ -46,7 +46,7 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   let id = req.params.id;
-  let qs = req.query;
+  let q = req.query;
   let selector = `
     e.name,
     e.description,
@@ -56,20 +56,23 @@ router.get("/:id", (req, res) => {
     e.pic`;
   let artists_agg = `, array_agg(row_to_json(row(a.id, a.name, a.pic))) AS artists `;
   let artists_join = `LEFT JOIN performances r ON e.id = r.event LEFT JOIN artists a ON a.id = r.artist `;
-  if (qs.fields) {
-    selector = qs.fields
+  if (q && q.fields) {
+    selector = q.fields
       .split(",")
+      .filter(f => f != "artists")
       .map(f => `e.${f}`)
       .join(",");
-    if (qs.fields.indexOf("artists") == -1) {
+    if (q.fields.indexOf("artists") === -1) {
       artists_agg = "";
       artists_join = "";
-    }
+    } else if (q.fields === "artists")
+      // Remove the comma at the start of the query
+      artists_agg = artists_agg.replace(",", "");
   }
   let query = `SELECT ${selector} ${artists_agg}
       FROM events e ${artists_join} 
       WHERE e.id = ${id}
-      GROUP BY ${selector}`;
+      ${selector.length === 0 ? "" : `GROUP BY ${selector}`}`;
   db.query(query, (err, result) => {
     if (err) res.status(500).json([]);
     else if (!result.rowCount) res.status(404).json([]);
