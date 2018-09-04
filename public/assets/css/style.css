@@ -71,7 +71,7 @@ iframe {
   font-weight: bold;
 }
 
-.data-placeholder{
+.data-placeholder {
   margin: 48px auto;
   font-size: 16px;
   color: #555555;
@@ -450,6 +450,13 @@ iframe {
   max-width: 150px;
   max-height: 150px;
   object-fit: contain;
+}
+
+#sponsors-container {
+  padding: 0 16px;
+}
+#sponsors-container > ul {
+  padding-left: 20px;
 }
 
 /* MAP */
