@@ -51,7 +51,11 @@ function formatArtistWebsite(value, template) {
 
 function formatEventDate(value, template) {
   let d = new Date(value);
-  return `${formatDate(d)} - ${d.getHours()}:${d.getMinutes()}`;
+  let mins = d.getMinutes().toString();
+  let hours = d.getHours().toString();
+  if (mins.length === 1) mins = "0" + mins;
+  if (hours.length === 1) hours = "0" + hours;
+  return `${formatDate(d)} - ${hours}:${mins}`;
 }
 
 function buildArtistChip(value, template) {
