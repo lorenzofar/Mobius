@@ -38,7 +38,7 @@
   <script src="../assets/js/utils.js"></script>
   <script>
     $(document).ready(() => {
-      $.get("/info").done(parseData).catch(handleError);
+      $.get("/info?fields=about,sponsors").done(parseData).catch(handleError);
     })
 
     function parseData(data) {
