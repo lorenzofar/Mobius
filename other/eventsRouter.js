@@ -37,7 +37,7 @@ router.get("/", (req, res) => {
 
   let query = `SELECT ${selector} ${artists_collector} FROM events e ${artists_joiner} ${search_string} ${
     selector.length === 0 ? "GROUP BY e.id" : `GROUP BY ${selector}`
-  }`;
+  } ${selector.indexOf("dt") !== -1 ? "ORDER BY dt ASC" : ""}`;
   db.query(query, (err, result) => {
     if (err) res.status(500).json([]);
     else res.status(200).json(result.rows);
