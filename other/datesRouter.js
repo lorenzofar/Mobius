@@ -1,12 +1,16 @@
 const express = require("express");
 const db = require("./dbManager");
-const qh = require("./queryHelper");
 const moment = require("moment");
 var router = express.Router();
 
+const sort_regex = /^(asc|desc|ASC|DESC)$/;
+
 router.get("/", (req, res) => {
+  let q = req.query;
+  let sort = "";
+  if (q && q.sort && sort_regex.test(q.sort)) sort = q.sort;
   db.query(
-    "SELECT DISTINCT DATE_TRUNC('day', dt) AS date FROM events ORDER BY date;",
+    `SELECT DISTINCT DATE_TRUNC('day', dt) AS date FROM events ORDER BY date ${sort}`,
     (err, result) => {
       if (err) res.status(500).json(null);
       else {
