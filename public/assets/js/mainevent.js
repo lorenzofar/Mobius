@@ -27,8 +27,9 @@ function populateArtistsThumbs(type, artists) {
   }
 
   artists.forEach(artist => {
-    $("#event-info-artists").loadTemplate($("#artistThumbTemplate"), artist, {
-      append: true
-    });
+    if (artist.f1)
+      $("#event-info-artists").loadTemplate($("#artistThumbTemplate"), artist, {
+        append: true
+      });
   });
 }
