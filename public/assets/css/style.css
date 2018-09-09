@@ -110,8 +110,6 @@ iframe {
 
 /* Single topic pages*/
 .detail {
-  display: flex;
-  flex-direction: column;
   padding: 12px;
 }
 .detail > * {
@@ -120,7 +118,6 @@ iframe {
 
 .detail-banner div {
   text-align: center;
-  margin-bottom: 8px;
 }
 
 .detail-banner .mdl-chip {
@@ -246,9 +243,6 @@ iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.artist-card-info > *:first-child {
-  margin-bottom: 8px;
 }
 
 .artist-card-name {
@@ -376,13 +370,11 @@ iframe {
 
   .artist-thumb {
     grid-template-areas: "artist-pic" "artist-info";
-
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
   .artist-thumb .artist-card-pic {
     margin: 0 auto;
-    margin-bottom: 8px;
   }
   .artist-thumb .artist-card-name {
     font-size: 16pt;
@@ -402,6 +394,7 @@ iframe {
 }
 
 /* NEWS */
+.detail,
 .news-card,
 .location-card {
   display: flex;
@@ -409,7 +402,10 @@ iframe {
 }
 
 .news-body,
-.location-body {
+.location-body,
+.artist-card-info > *:first-child,
+.detail-banner div,
+.artist-thumb .artist-card-pic {
   margin-bottom: 8px;
 }
 
