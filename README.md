@@ -1,6 +1,6 @@
 # General information about the team and the web application
 
-- Heroku URL: http://polimi-hyp-2018-team-10561373.dashboard.heroku.com
+- Heroku URL: https://polimi-hyp-2018-team-10561373.herokuapp.com/
 - Bitbucket repo URL: https://bitbucket.org/polimihyp2018team10561373/polimi-hyp-2018-project
 - Team administrator: Lorenzo Farinelli, 10561373, polimi-hyp-2018-10561373
 
