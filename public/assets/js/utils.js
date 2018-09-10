@@ -30,6 +30,7 @@ function formatDate(date) {
 if ($.addTemplateFormatter) {
   $.addTemplateFormatter("ArtistsHrefFormatter", formatArtistHref);
   $.addTemplateFormatter("ArtistsEventCountFormatter", formatArtistsEventCount);
+  $.addTemplateFormatter("ArtistsPicFormatter", formatArtistsPic);
   $.addTemplateFormatter("ArtistWebsiteFormatter", formatArtistWebsite);
   $.addTemplateFormatter("EventDateFormatter", formatEventDate);
   $.addTemplateFormatter("ArtistChipsFormatter", buildArtistChip);
@@ -43,6 +44,10 @@ function formatArtistHref(value, template) {
 
 function formatArtistsEventCount(value, template) {
   return `${value} event${value == 1 ? "" : "s"}`;
+}
+
+function formatArtistsPic(value, template) {
+  return `../assets/img/${value}`;
 }
 
 function formatArtistWebsite(value, template) {
